@@ -17,6 +17,13 @@ public class Zombie extends HorrorCharacter{
         setHealth(150);
     }
 
+    public Zombie(String name, int health){
+        vulnerabilities.add(Vulnerability.FIRE);
+        vulnerabilities.add(Vulnerability.HOLY_WATER);
+        setName(name);
+        setHealth(health);
+    }
+
     /**
      * Overridden attack() method from HorrorCharacter.
      * @param victim - receives another HorrorCharacter object and displays the victim's name

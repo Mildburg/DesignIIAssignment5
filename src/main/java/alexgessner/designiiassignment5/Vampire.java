@@ -18,11 +18,13 @@ public class Vampire extends HorrorCharacter implements Transformable{
         setHealth(200);
         transformed = false;
     }
-    public Vampire(String name, int health){
+    public Vampire(String name, int health, String date){
         vulnerabilities.add(Vulnerability.SUNLIGHT);
         vulnerabilities.add(Vulnerability.HOLY_WATER);
         transformed = false;
-
+        setName(name);
+        setHealth(health);
+        setDate(date);
     }
 
     /**

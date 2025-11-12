@@ -20,6 +20,14 @@ public class Werewolf extends HorrorCharacter implements Transformable {
         transformed = false;
     }
 
+    public Werewolf(String name, int health){
+        vulnerabilities.add(Vulnerability.SILVER);
+        vulnerabilities.add(Vulnerability.SUNLIGHT);
+        transformed = false;
+        setName(name);
+        setHealth(health);
+    }
+
     /**
      * Getter for the transformation boolean.
      * @return - returns the value of the transform variable.

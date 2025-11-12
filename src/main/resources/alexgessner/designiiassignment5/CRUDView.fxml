@@ -1,22 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.CRUDController">
    <children>
-      <VBox layoutY="23.0" prefHeight="379.0" prefWidth="224.0">
+      <VBox layoutX="188.0" layoutY="23.0" prefHeight="379.0" prefWidth="224.0">
          <children>
-            <HBox prefHeight="27.0" prefWidth="224.0">
+            <HBox prefHeight="47.0" prefWidth="224.0">
                <children>
-                  <Label prefHeight="110.0" prefWidth="48.0" text="Name:" />
-                  <TextField fx:id="NameField" />
+                  <Label prefHeight="27.0" prefWidth="35.0" text="Name:">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="NameField" maxWidth="102.0" prefHeight="26.0" prefWidth="100.0">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="26.0" prefWidth="224.0">
+               <children>
+                  <Label prefHeight="26.0" prefWidth="37.0" text="Health:">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="HealthField" maxWidth="100.0" prefHeight="26.0" prefWidth="99.0">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="25.0" prefWidth="224.0">
+               <children>
+                  <Label maxWidth="100.0" minWidth="100.0" text="Type Of Character">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="50.0" top="5.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="30.0" prefWidth="225.0">
+               <children>
+                  <RadioButton fx:id="VampireButton" mnemonicParsing="false" text="Vampire" />
+               </children>
+               <padding>
+                  <Insets left="75.0" top="5.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="30.0" prefWidth="225.0">
+               <padding>
+                  <Insets left="75.0" top="5.0" />
+               </padding>
+               <children>
+                  <RadioButton fx:id="WerewolfButton" mnemonicParsing="false" text="Werewolf" />
                </children>
             </HBox>
-            <HBox prefHeight="33.0" prefWidth="224.0">
+            <HBox prefHeight="30.0" prefWidth="225.0">
                <children>
-                  <Label prefHeight="39.0" prefWidth="28.0" text="Label" />
+                  <RadioButton fx:id="ZombieButton" mnemonicParsing="false" text="Zombie">
+                     <padding>
+                        <Insets left="10.0" top="5.0" />
+                     </padding>
+                  </RadioButton>
                </children>
+               <padding>
+                  <Insets left="65.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="SubmitButton" mnemonicParsing="false" onAction="#submitChar" text="Submit" />
+               </children>
+               <padding>
+                  <Insets left="85.0" top="35.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button mnemonicParsing="false" text="Character List" />
+               </children>
+               <padding>
+                  <Insets left="70.0" top="35.0" />
+               </padding>
             </HBox>
          </children>
       </VBox>
