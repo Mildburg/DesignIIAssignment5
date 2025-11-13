@@ -13,7 +13,7 @@ public abstract class HorrorCharacter {
     public ArrayList<Vulnerability> vulnerabilities = new ArrayList<>();
     private String name;
     private int health;
-    private String date;
+    private String dateLastSighted;
 
     /**
      * Abstract attack method. Each character will have their own attack methods.
@@ -68,12 +68,12 @@ public abstract class HorrorCharacter {
             this.health = health;
     }
 
-    public String getDate() {
-        return date;
+    public String getDateLastSighted() {
+        return dateLastSighted;
     }
 
-    public void setDate(String date) {
-        if(!date.isEmpty())
-            this.date = date;
+    public void setDateLastSighted(String dateLastSighted) {
+        if(!dateLastSighted.isEmpty())
+            this.dateLastSighted = dateLastSighted;
     }
 }//end class

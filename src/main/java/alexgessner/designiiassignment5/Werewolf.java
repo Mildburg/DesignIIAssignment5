@@ -20,12 +20,13 @@ public class Werewolf extends HorrorCharacter implements Transformable {
         transformed = false;
     }
 
-    public Werewolf(String name, int health){
+    public Werewolf(String name, int health, String date){
         vulnerabilities.add(Vulnerability.SILVER);
         vulnerabilities.add(Vulnerability.SUNLIGHT);
         transformed = false;
         setName(name);
         setHealth(health);
+        setDateLastSighted(date);
     }
 
     /**
@@ -80,5 +81,13 @@ public class Werewolf extends HorrorCharacter implements Transformable {
             System.out.println(getName() + " howls and sprints back into the dense forest!");
         else
             System.out.println(getName() + " panics and runs back into the darkness.");
+    }
+
+    @Override
+    public String toString() {
+        String info ="";
+        info += "Name: " + getName() + " Type: Werewolf Health: " + getHealth() + " Vulnerabilities: " + getVulnerabilities() +
+                " Last Sighted Date: " + getDateLastSighted();
+        return info;
     }
 }//end class

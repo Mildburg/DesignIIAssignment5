@@ -17,11 +17,12 @@ public class Zombie extends HorrorCharacter{
         setHealth(150);
     }
 
-    public Zombie(String name, int health){
+    public Zombie(String name, int health, String date){
         vulnerabilities.add(Vulnerability.FIRE);
         vulnerabilities.add(Vulnerability.HOLY_WATER);
         setName(name);
         setHealth(health);
+        setDateLastSighted(date);
     }
 
     /**
@@ -42,5 +43,13 @@ public class Zombie extends HorrorCharacter{
         System.out.println(getName() + " slowly sinks back into the lake from whence he came.");
     }
 
+
+    @Override
+    public String toString() {
+        String info ="";
+        info += "Name: " + getName() + " Type: Zombie Health: " + getHealth() + " Vulnerabilities: " + getVulnerabilities() +
+                " Last Sighted Date: " + getDateLastSighted();
+        return info;
+    }
 
 }//end class

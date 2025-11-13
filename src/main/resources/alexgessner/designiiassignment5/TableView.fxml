@@ -5,6 +5,12 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.TableController">
    <children>
-      <ListView fx:id="CharList" editable="true" layoutX="9.0" layoutY="17.0" prefHeight="247.0" prefWidth="582.0" />
+      <ListView fx:id="CharList" editable="true" layoutX="9.0" layoutY="25.0" prefHeight="200.0" prefWidth="580.0" />
+      <Label layoutX="252.0" layoutY="5.0" text="Monster Sightings" />
+      <HBox alignment="CENTER" layoutX="200.0" layoutY="262.0" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button mnemonicParsing="false" text="Create New Character" />
+         </children>
+      </HBox>
    </children>
 </AnchorPane>
