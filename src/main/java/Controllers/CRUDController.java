@@ -54,6 +54,6 @@ public class CRUDController{
     @FXML
     private void switchToSecondary(ActionEvent e) throws IOException {
         Stage stage = (Stage) ((javafx.scene.Node) e.getSource()).getScene().getWindow();
-        AppState.switchSecondScene(stage);
+        AppState.switchToListViewScene(stage);
     }
 }

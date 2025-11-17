@@ -90,4 +90,8 @@ public class Werewolf extends HorrorCharacter implements Transformable {
                 " Last Sighted Date: " + getDateLastSighted();
         return info;
     }
+    @Override
+    public String CSVFormat(){
+        return super.CSVFormat() + ",Werewolf\n";
+    }
 }//end class

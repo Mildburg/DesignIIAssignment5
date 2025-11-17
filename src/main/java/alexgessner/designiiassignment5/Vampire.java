@@ -91,4 +91,9 @@ public class Vampire extends HorrorCharacter implements Transformable{
                 " Last Sighted Date: " + getDateLastSighted();
         return info;
     }
+
+    @Override
+    public String CSVFormat(){
+        return super.CSVFormat() + ",Vampire\n";
+    }
 }//end class

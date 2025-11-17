@@ -7,9 +7,14 @@
    <children>
       <ListView fx:id="CharList" editable="true" layoutX="9.0" layoutY="25.0" prefHeight="200.0" prefWidth="580.0" />
       <Label layoutX="252.0" layoutY="5.0" text="Monster Sightings" />
-      <HBox alignment="CENTER" layoutX="200.0" layoutY="262.0" prefHeight="100.0" prefWidth="200.0">
+      <HBox alignment="CENTER" layoutX="100.0" layoutY="225.0" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Button mnemonicParsing="false" text="Create New Character" />
+            <Button fx:id="sceneSwitcher" mnemonicParsing="false" onAction="#charCreationSwitcher" text="Create New Character" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="300.0" layoutY="225.0" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="SaveCSV" mnemonicParsing="false" onAction="#saveSightings" text="Save Catalog" />
          </children>
       </HBox>
    </children>

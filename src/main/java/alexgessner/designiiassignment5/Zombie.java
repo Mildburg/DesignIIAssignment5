@@ -52,4 +52,8 @@ public class Zombie extends HorrorCharacter{
         return info;
     }
 
+    @Override
+    public String CSVFormat(){
+        return super.CSVFormat() + ",Zombie\n";
+    }
 }//end class

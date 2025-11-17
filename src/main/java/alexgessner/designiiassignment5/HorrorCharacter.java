@@ -76,4 +76,8 @@ public abstract class HorrorCharacter {
         if(!dateLastSighted.isEmpty())
             this.dateLastSighted = dateLastSighted;
     }
+
+    public String CSVFormat(){
+        return vulnerabilities + "," + name + "," + health + "," + dateLastSighted;
+    }
 }//end class
