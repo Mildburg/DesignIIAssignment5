@@ -80,4 +80,8 @@ public abstract class HorrorCharacter {
     public String CSVFormat(){
         return vulnerabilities + "," + name + "," + health + "," + dateLastSighted;
     }
+
+    public String getType(){
+        return "";
+    }
 }//end class

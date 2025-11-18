@@ -47,4 +47,17 @@ public class ZombieDTO extends HorrorCharacter {
         if(health > 0)
             this.health.set(health);
     }
+
+    @Override
+    public String getType(){
+        return "Zombie";
+    }
+
+    @Override
+    public String toString() {
+        String info ="";
+        info += "Name: " + getName() + " Type: Zombie Health: " + getHealth() + " Vulnerabilities: " + getVulnerabilities() +
+                " Last Sighted Date: " + getDateLastSighted();
+        return info;
+    }
 }

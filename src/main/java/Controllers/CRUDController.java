@@ -1,10 +1,8 @@
 package Controllers;
 
-import alexgessner.designiiassignment5.AppState;
-import alexgessner.designiiassignment5.Vampire;
-import alexgessner.designiiassignment5.Werewolf;
-import alexgessner.designiiassignment5.Zombie;
+import alexgessner.designiiassignment5.*;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
@@ -13,11 +11,13 @@ import javafx.event.ActionEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 import java.time.format.DateTimeFormatter;
+import java.util.ResourceBundle;
 import java.util.Stack;
 
 
-public class CRUDController{
+public class CRUDController implements Initializable {
     @FXML private TextField NameField;
     @FXML private TextField HealthField;
     @FXML private RadioButton VampireButton;
@@ -32,21 +32,21 @@ public class CRUDController{
         String charName = NameField.getText();
         int charHealth = (int) Integer.parseInt(HealthField.getText());
         if(VampireButton.isSelected()) {
-            Vampire vampire = new Vampire(charName, charHealth, datePicked.getValue().format(
+            VampireDTO vampire = new VampireDTO(new Vampire(charName, charHealth, datePicked.getValue().format(
                     DateTimeFormatter.ofPattern("MM/dd/yyyy")
-            ));
+            )));
             AppState.characterList.add(vampire);
         }
         else if(WerewolfButton.isSelected()){
-            Werewolf werewolf = new Werewolf(charName, charHealth, datePicked.getValue().format(
+            WerewolfDTO werewolf = new WerewolfDTO(new Werewolf(charName, charHealth, datePicked.getValue().format(
                     DateTimeFormatter.ofPattern("MM/dd/yyyy")
-            ));
+            )));
             AppState.characterList.add(werewolf);
         }
         else {
-            Zombie zombie = new Zombie(charName, charHealth, datePicked.getValue().format(
+            ZombieDTO zombie = new ZombieDTO(new Zombie(charName, charHealth, datePicked.getValue().format(
                     DateTimeFormatter.ofPattern("MM/dd/yyyy")
-            ));
+            )));
             AppState.characterList.add(zombie);
         }
     }
@@ -55,5 +55,11 @@ public class CRUDController{
     private void switchToSecondary(ActionEvent e) throws IOException {
         Stage stage = (Stage) ((javafx.scene.Node) e.getSource()).getScene().getWindow();
         AppState.switchToListViewScene(stage);
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle){
+
+
     }
 }

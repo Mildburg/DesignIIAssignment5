@@ -47,4 +47,17 @@ public class WerewolfDTO extends HorrorCharacter{
         if(health > 0)
             this.health.set(health);
     }
+
+    @Override
+    public String getType(){
+        return "Werewolf";
+    }
+
+    @Override
+    public String toString() {
+        String info ="";
+        info += "Name: " + getName() + " Type: Werewolf Health: " + getHealth() + " Vulnerabilities: " + getVulnerabilities() +
+                " Last Sighted Date: " + getDateLastSighted();
+        return info;
+    }
 }

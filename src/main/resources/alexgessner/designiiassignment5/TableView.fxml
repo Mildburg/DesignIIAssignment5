@@ -5,17 +5,18 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.TableController">
    <children>
-      <ListView fx:id="CharList" editable="true" layoutX="9.0" layoutY="25.0" prefHeight="200.0" prefWidth="580.0" />
       <Label layoutX="252.0" layoutY="5.0" text="Monster Sightings" />
-      <HBox alignment="CENTER" layoutX="100.0" layoutY="225.0" prefHeight="100.0" prefWidth="200.0">
+      <HBox alignment="CENTER" layoutX="200.0" layoutY="253.0" prefHeight="100.0" prefWidth="200.0">
          <children>
             <Button fx:id="sceneSwitcher" mnemonicParsing="false" onAction="#charCreationSwitcher" text="Create New Character" />
          </children>
       </HBox>
-      <HBox alignment="CENTER" layoutX="300.0" layoutY="225.0" prefHeight="100.0" prefWidth="200.0">
-         <children>
-            <Button fx:id="SaveCSV" mnemonicParsing="false" onAction="#saveSightings" text="Save Catalog" />
-         </children>
-      </HBox>
+      <TableView fx:id="CharList" layoutX="177.0" layoutY="43.0" prefHeight="200.0" prefWidth="246.0">
+        <columns>
+          <TableColumn fx:id="NameClm" prefWidth="75.0" text="Name" />
+          <TableColumn fx:id="TypeClm" prefWidth="75.0" text="Type" />
+            <TableColumn fx:id="DateClm" prefWidth="96.19998168945312" text="Last Sighted" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>

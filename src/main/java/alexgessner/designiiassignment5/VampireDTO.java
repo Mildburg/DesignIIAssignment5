@@ -58,4 +58,16 @@ public class VampireDTO extends HorrorCharacter {
     public void setTransformed(boolean transformed) {
         this.transformed = transformed;
     }
+
+    @Override
+    public String getType(){
+        return "Vampire";
+    }
+    @Override
+    public String toString() {
+        String info ="";
+        info += "Name: " + getName() + " Type: Vampire Health: " + getHealth() + " Vulnerabilities: " + getVulnerabilities() +
+                " Last Sighted Date: " + getDateLastSighted();
+        return info;
+    }
 }
