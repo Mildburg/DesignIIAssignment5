@@ -9,9 +9,18 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * App class to start the window and load the scenes.
+ */
+
 public class App extends Application {
     private static Scene scene;
 
+    /**
+     * Starts the scene;
+     * @param stage - Stage for the first scene.
+     * @throws IOException - just throws exception
+     */
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("CRUDView"), 640, 480);
@@ -20,6 +29,12 @@ public class App extends Application {
         stage.show();
     }
 
+    /**
+     * Load FXML method to make code more concise.
+     * @param fxml - string of filepath
+     * @return - returns a parent and loads the file.
+     * @throws IOException - throws the exception
+     */
     public static Parent loadFXML(String fxml) throws IOException{
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();

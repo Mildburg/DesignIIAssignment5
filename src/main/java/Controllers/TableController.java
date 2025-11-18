@@ -22,6 +22,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.ResourceBundle;
 
+/**
+ * Controller for the tableview. Implements initializable.
+ */
+
 
 public class TableController implements Initializable {
     //Table View
@@ -33,12 +37,22 @@ public class TableController implements Initializable {
     @FXML private Button sceneSwitcher;
     @FXML private Button deleteButton;
 
+    /**
+     * Switcher to the Create a Character Screen. Connected to the button.
+     * @param e - clicking the Button
+     * @throws IOException - throws exceptions.
+     */
     @FXML
     public void charCreationSwitcher(ActionEvent e) throws IOException {
         Stage stage = (Stage) ((javafx.scene.Node) e.getSource()).getScene().getWindow();
         AppState.switchToCreateChar(stage);
     }
 
+    /**
+     * Method for Initializing the tableView and the Columns. Overrides from interface.
+     * @param url - url, supplied by launch().
+     * @param resourceBundle - resourceBundle, also supplied by launch().
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
         //setting up the columns and using reflection to get information
@@ -61,6 +75,10 @@ public class TableController implements Initializable {
 
     }
 
+    /**
+     * Method for deleting characters. Connected to button.
+     * @param e - clicking the button.
+     */
     @FXML
     public void deleteChar(ActionEvent e){
         ObservableList<HorrorCharacter> allChars = CharList.getItems();
@@ -71,6 +89,10 @@ public class TableController implements Initializable {
         }
     }
 
+    /**
+     * Method for changing the name in the TableView.
+     * @param editedName - the new name entered.
+     */
     @FXML
     public void nameChanged(TableColumn.CellEditEvent editedName){
         HorrorCharacter selectedChar = CharList.getSelectionModel().getSelectedItem();
@@ -79,6 +101,10 @@ public class TableController implements Initializable {
         CharList.refresh();
     }
 
+    /**
+     * Method for changing the type in TableView.
+     * @param editedName - new type entered.
+     */
     @FXML
     public void typeChanged(TableColumn.CellEditEvent editedName){
         HorrorCharacter selectedChar = CharList.getSelectionModel().getSelectedItem();
@@ -87,6 +113,10 @@ public class TableController implements Initializable {
         CharList.refresh();
     }
 
+    /**
+     * Method for changing the date in the TableView.
+     * @param editedName - new date entered.
+     */
     @FXML
     public void dateChanged(TableColumn.CellEditEvent editedName){
         HorrorCharacter selectedChar = CharList.getSelectionModel().getSelectedItem();

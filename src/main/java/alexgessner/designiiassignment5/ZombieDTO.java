@@ -3,6 +3,10 @@ package alexgessner.designiiassignment5;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
+/**
+ * DTO for the Zombie class. Extends HorrorCharacter.
+ */
+
 public class ZombieDTO extends HorrorCharacter {
 
     private SimpleStringProperty name;

@@ -3,6 +3,10 @@ package alexgessner.designiiassignment5;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
+/**
+ * DTO for the Vampire Class. Also extends HorrorCharacter
+ */
+
 public class VampireDTO extends HorrorCharacter {
 
     private SimpleStringProperty name;

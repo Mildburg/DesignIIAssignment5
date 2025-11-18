@@ -16,8 +16,10 @@ import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 import java.util.Stack;
 
-
-public class CRUDController implements Initializable {
+/**
+ * Controller for the Create a Character Scene
+ */
+public class CRUDController{
     @FXML private TextField NameField;
     @FXML private TextField HealthField;
     @FXML private RadioButton VampireButton;
@@ -27,6 +29,10 @@ public class CRUDController implements Initializable {
     @FXML private DatePicker datePicked;
     @FXML private Button ViewSwitcher;
 
+    /**
+     * Submits the character and populates it in the "backend"
+     * @param e - clicking the button.
+     */
     @FXML
     private void submitChar(ActionEvent e){
         String charName = NameField.getText();
@@ -51,15 +57,14 @@ public class CRUDController implements Initializable {
         }
     }
 
+    /**
+     * Method that switches to the tableView scene. Connected to the button in this scene.
+     * @param e - clicking the button.
+     * @throws IOException - throws the exception.
+     */
     @FXML
     private void switchToSecondary(ActionEvent e) throws IOException {
         Stage stage = (Stage) ((javafx.scene.Node) e.getSource()).getScene().getWindow();
-        AppState.switchToListViewScene(stage);
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle){
-
-
+        AppState.switchToTableViewScene(stage);
     }
 }
