@@ -2,6 +2,7 @@ package Controllers;
 
 import alexgessner.designiiassignment5.AppState;
 import alexgessner.designiiassignment5.HorrorCharacter;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -28,8 +29,9 @@ public class TableController implements Initializable {
     @FXML private TableColumn<HorrorCharacter, String> NameClm;
     @FXML private TableColumn<HorrorCharacter, String> TypeClm;
     @FXML private TableColumn<HorrorCharacter, String> DateClm;
-    //Button to switch scenes
+    //Button to switch scenes/delete characters
     @FXML private Button sceneSwitcher;
+    @FXML private Button deleteButton;
 
     @FXML
     public void charCreationSwitcher(ActionEvent e) throws IOException {
@@ -57,5 +59,39 @@ public class TableController implements Initializable {
         CharList.setItems(AppState.characterList);
 
 
+    }
+
+    @FXML
+    public void deleteChar(ActionEvent e){
+        ObservableList<HorrorCharacter> allChars = CharList.getItems();
+        ObservableList<HorrorCharacter> selectedChars = CharList.getSelectionModel().getSelectedItems();
+
+        for (HorrorCharacter h : selectedChars){
+            allChars.remove(h);
+        }
+    }
+
+    @FXML
+    public void nameChanged(TableColumn.CellEditEvent editedName){
+        HorrorCharacter selectedChar = CharList.getSelectionModel().getSelectedItem();
+        selectedChar.setName(editedName.getNewValue().toString());
+
+        CharList.refresh();
+    }
+
+    @FXML
+    public void typeChanged(TableColumn.CellEditEvent editedName){
+        HorrorCharacter selectedChar = CharList.getSelectionModel().getSelectedItem();
+        selectedChar.setType(editedName.getNewValue().toString());
+
+        CharList.refresh();
+    }
+
+    @FXML
+    public void dateChanged(TableColumn.CellEditEvent editedName){
+        HorrorCharacter selectedChar = CharList.getSelectionModel().getSelectedItem();
+        selectedChar.setDateLastSighted(editedName.getNewValue().toString());
+
+        CharList.refresh();
     }
 }

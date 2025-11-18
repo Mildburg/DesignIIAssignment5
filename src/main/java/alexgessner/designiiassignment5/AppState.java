@@ -12,10 +12,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AppState {
-    public static ObservableList<HorrorCharacter> characterList = FXCollections.observableArrayList(List.of(
+    public static ObservableList<HorrorCharacter> characterList = FXCollections.observableArrayList(
             new VampireDTO(new Vampire("Dio", 300, "1/18/1989")),
             new ZombieDTO(new Zombie("Jason", 250, "2/13/2009")),
-            new WerewolfDTO(new Werewolf("Lupin", 175, "5/2/1998"))));
+            new WerewolfDTO(new Werewolf("Lupin", 175, "5/2/1998")));
 
     public static void switchToListViewScene(Stage stage) throws IOException {
         Scene scene = new Scene(App.loadFXML("TableView"), 640, 480);

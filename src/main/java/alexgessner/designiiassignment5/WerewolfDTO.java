@@ -8,11 +8,13 @@ public class WerewolfDTO extends HorrorCharacter{
     private SimpleStringProperty name;
     private SimpleStringProperty dateLastSighted;
     private SimpleIntegerProperty health;
+    private SimpleStringProperty type;
 
     public WerewolfDTO(Werewolf w){
         this.name = new SimpleStringProperty(w.getName());
         this.dateLastSighted = new SimpleStringProperty(w.getDateLastSighted());
         this.health = new SimpleIntegerProperty(w.getHealth());
+        this.type = new SimpleStringProperty("Werewolf");
     }
 
 
@@ -50,7 +52,13 @@ public class WerewolfDTO extends HorrorCharacter{
 
     @Override
     public String getType(){
-        return "Werewolf";
+        return this.type.get();
+    }
+
+    @Override
+    public void setType(String type){
+        if(!type.isEmpty())
+           this.type.set(type);
     }
 
     @Override
@@ -59,5 +67,17 @@ public class WerewolfDTO extends HorrorCharacter{
         info += "Name: " + getName() + " Type: Werewolf Health: " + getHealth() + " Vulnerabilities: " + getVulnerabilities() +
                 " Last Sighted Date: " + getDateLastSighted();
         return info;
+    }
+
+    public SimpleStringProperty nameProperty(){
+        return name;
+    }
+
+    public SimpleStringProperty typeProperty(){
+        return type;
+    }
+
+    public SimpleStringProperty dateProperty(){
+        return dateLastSighted;
     }
 }

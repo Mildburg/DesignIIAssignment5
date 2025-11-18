@@ -6,7 +6,7 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.TableController">
    <children>
       <Label layoutX="252.0" layoutY="5.0" text="Monster Sightings" />
-      <HBox alignment="CENTER" layoutX="200.0" layoutY="253.0" prefHeight="100.0" prefWidth="200.0">
+      <HBox alignment="CENTER" layoutX="100.0" layoutY="243.0" prefHeight="100.0" prefWidth="200.0">
          <children>
             <Button fx:id="sceneSwitcher" mnemonicParsing="false" onAction="#charCreationSwitcher" text="Create New Character" />
          </children>
@@ -18,5 +18,10 @@
             <TableColumn fx:id="DateClm" prefWidth="96.19998168945312" text="Last Sighted" />
         </columns>
       </TableView>
+      <HBox alignment="CENTER" layoutX="300.0" layoutY="243.0" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteChar" text="Delete" />
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

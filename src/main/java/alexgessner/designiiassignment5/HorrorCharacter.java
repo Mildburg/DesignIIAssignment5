@@ -84,4 +84,6 @@ public abstract class HorrorCharacter {
     public String getType(){
         return "";
     }
+
+    public void setType(String type){}
 }//end class

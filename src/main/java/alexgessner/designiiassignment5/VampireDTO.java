@@ -9,12 +9,14 @@ public class VampireDTO extends HorrorCharacter {
     private SimpleIntegerProperty health;
     private SimpleStringProperty dateLastSighted;
     private boolean transformed;
+    private SimpleStringProperty type;
 
     public VampireDTO(Vampire vampire){
         this.name = new SimpleStringProperty(vampire.getName());
         this.health = new SimpleIntegerProperty(vampire.getHealth());
         this.dateLastSighted = new SimpleStringProperty(vampire.getDateLastSighted());
         this.transformed = false;
+        this.type = new SimpleStringProperty("Vampire");
     }
 
     @Override
@@ -61,13 +63,33 @@ public class VampireDTO extends HorrorCharacter {
 
     @Override
     public String getType(){
-        return "Vampire";
+        return this.type.get();
     }
+    @Override
+    public void setType(String type){
+        if(!type.isEmpty()) {
+            this.type.set(type);
+
+        }
+    }
+
     @Override
     public String toString() {
         String info ="";
         info += "Name: " + getName() + " Type: Vampire Health: " + getHealth() + " Vulnerabilities: " + getVulnerabilities() +
                 " Last Sighted Date: " + getDateLastSighted();
         return info;
+    }
+
+    public SimpleStringProperty nameProperty(){
+        return name;
+    }
+
+    public SimpleStringProperty typeProperty(){
+        return type;
+    }
+
+    public SimpleStringProperty dateProperty(){
+        return dateLastSighted;
     }
 }

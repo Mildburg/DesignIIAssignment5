@@ -8,12 +8,14 @@ public class ZombieDTO extends HorrorCharacter {
     private SimpleStringProperty name;
     private SimpleStringProperty dateLastSighted;
     private SimpleIntegerProperty health;
+    private SimpleStringProperty type;
 
 
     public ZombieDTO(Zombie z){
         this.name = new SimpleStringProperty(z.getName());
         this.dateLastSighted = new SimpleStringProperty(z.getDateLastSighted());
         this.health = new SimpleIntegerProperty(z.getHealth());
+        this.type = new SimpleStringProperty("Werewolf");
     }
 
     @Override
@@ -50,7 +52,13 @@ public class ZombieDTO extends HorrorCharacter {
 
     @Override
     public String getType(){
-        return "Zombie";
+        return this.type.get();
+    }
+
+    @Override
+    public void setType(String type){
+        if(!type.isEmpty())
+            this.type.set(type);
     }
 
     @Override
@@ -59,5 +67,17 @@ public class ZombieDTO extends HorrorCharacter {
         info += "Name: " + getName() + " Type: Zombie Health: " + getHealth() + " Vulnerabilities: " + getVulnerabilities() +
                 " Last Sighted Date: " + getDateLastSighted();
         return info;
+    }
+
+    public SimpleStringProperty nameProperty(){
+        return name;
+    }
+
+    public SimpleStringProperty typeProperty(){
+        return type;
+    }
+
+    public SimpleStringProperty dateProperty(){
+        return dateLastSighted;
     }
 }
